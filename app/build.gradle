@@ -42,9 +42,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.5'
     implementation 'com.jakewharton:butterknife:7.0.1'
     implementation 'com.mcxiaoke.volley:library:1.0.19'
-    implementation 'com.android.support:appcompat-v7:23.1.0'
-    implementation 'com.android.support:design:23.1.0'
-    implementation 'com.android.support:support-v4:23.1.0'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation('org.apache.httpcomponents:httpmime:4.3.5') {
         exclude module: 'httplient'
     }
