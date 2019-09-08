@@ -62,7 +62,8 @@ public class Api {
 
     //    public static final String HOST = "http://192.168.207.55:8087";
 //    public static final String HOST = "http://zleida-app.qa-01.jimubox.com";
-    public static final String HOST = "https://app.zleida.com";
+//    public static final String HOST = "https://app.zleida.com";
+    public static final String HOST = "http://app.zleida.com";
     private static final String TAG = Api.class.getName();
     private static final String CODE_SUCCESS = "1";
     private static final String CODE_FAIL = "2";

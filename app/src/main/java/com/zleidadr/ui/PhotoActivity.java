@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,6 +66,7 @@ public class PhotoActivity extends LocationBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo);
         ButterKnife.bind(this);
+        initPhotoError();
         mLocalId = getIntent().getStringExtra(Constant.BUNDLE_STR_LOCALID);
         if (!TextUtils.isEmpty(mLocalId)) {
             mReceivableReq = ReceivableReq.findById(ReceivableReq.class, Integer.valueOf(mLocalId));
@@ -97,6 +99,13 @@ public class PhotoActivity extends LocationBaseActivity {
 
 
         initView();
+    }
+
+    private void initPhotoError() {
+        // android 7.0系统解决拍照的问题
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
+        builder.detectFileUriExposure();
     }
 
     @Override
