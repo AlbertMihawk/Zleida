@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin"
+    tools:context="com.zleidadr.ui.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingBottom="24dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:scaleType="center"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:src="@drawable/logo" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.7"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/boder_1dp"
+                android:divider="@drawable/divider"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <EditText
+                    android:id="@+id/et_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="请输入用户名"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:singleLine="true"
+                    android:textColorHint="@color/gray"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="请输入密码"
+                    android:inputType="textPassword"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:singleLine="true"
+                    android:textColorHint="@color/gray"
+                    android:textSize="@dimen/h3" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/selector_login_btn"
+                android:text="登录"
+                android:textColor="@color/white"
+                android:textSize="@dimen/h2" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/inc_loading"
+        layout="@layout/include_loading" />
+</FrameLayout>

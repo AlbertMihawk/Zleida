@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.MainV2Activity">
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/include_titlebar_v2" />
+
+    <!--<TextView-->
+        <!--android:id="@+id/temp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="20dp"-->
+        <!--android:visibility="gone" />-->
+
+    <cn.lightsky.infiniteindicator.InfiniteIndicator
+        android:id="@+id/defaultIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:verticalScrollbarPosition="defaultPosition" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:background="@drawable/icon_main_bg"
+        android:orientation="vertical"
+        android:weightSum="8">
+
+        <RelativeLayout
+            android:id="@+id/rl_quan"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6">
+
+            <ImageView
+                android:id="@+id/iv_quan1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:scaleType="fitCenter"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:src="@drawable/icon_quan1" />
+
+            <ImageView
+                android:id="@+id/iv_quan2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:scaleType="fitCenter"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:src="@drawable/icon_quan2" />
+
+            <ImageView
+                android:id="@+id/iv_quan3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:scaleType="fitCenter"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:src="@drawable/icon_quan3" />
+
+            <ImageView
+                android:id="@+id/iv_quan4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:scaleType="fitCenter"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:src="@drawable/icon_quan4" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_total"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="@dimen/h2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="案件总数"
+                    android:textSize="@dimen/h5" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:src="@drawable/ball_green" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="待催委案："
+                        android:textSize="@dimen/h4" />
+
+                    <TextView
+                        android:id="@+id/tv_await"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="24dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="0"
+                        android:textSize="@dimen/h4" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:src="@drawable/ball_blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="在催委案："
+                        android:textSize="@dimen/h4" />
+
+                    <TextView
+                        android:id="@+id/tv_doing"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="24dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="0"
+                        android:textSize="@dimen/h4" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:src="@drawable/ball_orange" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="催收成功："
+                        android:textSize="@dimen/h4" />
+
+                    <TextView
+                        android:id="@+id/tv_success"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="24dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="0"
+                        android:textSize="@dimen/h4" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:src="@drawable/ball_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="催收过期："
+                        android:textSize="@dimen/h4" />
+
+                    <TextView
+                        android:id="@+id/tv_overdue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="24dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="0"
+                        android:textSize="@dimen/h4" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:paddingBottom="3dp"
+        android:paddingTop="5dp">
+
+
+        <LinearLayout
+            android:id="@+id/ll_appoint"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_appoint"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:scaleType="fitCenter"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:src="@drawable/selector_main1" />
+
+            <TextView
+                android:id="@+id/tv_appoint"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="我的催单"
+                android:textColor="@drawable/selector_text_pressed"
+                android:textSize="@dimen/h7" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_draft"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_draft"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:scaleType="fitCenter"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:src="@drawable/selector_main2" />
+
+            <TextView
+                android:id="@+id/tv_draft"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="草稿箱"
+                android:textColor="@drawable/selector_text_pressed"
+                android:textSize="@dimen/h7" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_stay"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_stay"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:scaleType="fitCenter"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:src="@drawable/selector_main3" />
+
+            <TextView
+                android:id="@+id/tv_stay"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="提交箱"
+                android:textColor="@drawable/selector_text_pressed"
+                android:textSize="@dimen/h7" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_receivable"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_receivable"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:scaleType="fitCenter"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:src="@drawable/selector_main4" />
+
+            <TextView
+                android:id="@+id/tv_receivable"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="反馈箱"
+                android:textColor="@drawable/selector_text_pressed"
+                android:textSize="@dimen/h7" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_discovery"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_discovery"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:scaleType="fitCenter"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:src="@drawable/selector_main5" />
+
+            <TextView
+                android:id="@+id/tv_discovery"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="发现"
+                android:textColor="@drawable/selector_text_pressed"
+                android:textSize="@dimen/h7" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@drawable/icon_titlebar_bg"
+        android:weightSum="4">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <FrameLayout
+                android:id="@+id/tv_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/icon_arrow_left"
+                    android:drawablePadding="5dp"
+                    android:text="返回"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/h3" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_left_small"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="测试"
+                android:textColor="@color/white"
+                android:textSize="@dimen/h4"
+                android:visibility="invisible" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="标题"
+                android:textColor="@color/white"
+                android:textSize="@dimen/h2"
+                android:visibility="invisible" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_right"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawablePadding="0dp"
+                android:gravity="center"
+                android:text="完成"
+                android:textColor="@color/white"
+                android:textSize="@dimen/h3"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/iv_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="20dp"
+                android:scaleType="center"
+                android:src="@drawable/icon_settings"
+                android:visibility="invisible" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="activity_background">#FF333333</color>
+    <color name="clear">#00000000</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="green">#00b57d</color>
+    <color name="deep_green">#FF00875D</color>
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="gray">#ffd1cfcf</color>
+    <color name="dialog_bg">#CC333333</color>
+    <color name="listview_bg">#ffefeff4</color>
+    <color name="listview_item_pressed">#55eeeeee</color>
+
+
+    <color name="color_v2_green">#28b677</color>
+    <color name="color_v2_orange">#fa993d</color>
+    <color name="color_v2_blue">#70a0ff</color>
+    <color name="color_v2_gray">#c2c2c2</color>
+
+
+    //文字颜色
+    <color name="title_bar">#FF333333</color>
+    <color name="text_black">#ff333333</color>
+    <color name="text_label_color">#ff999999</color>
+    <color name="text_green">#ff4bab7D</color>
+    <color name="text_grass">#ff95cb57</color>
+    <color name="text_red">#ffcc001c</color>
+    <color name="text_grey">#ff9b9b9b</color>
+
+
+</resources>

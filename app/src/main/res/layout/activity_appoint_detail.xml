@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zleidadr.ui.AppointDetailActivity">
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/include_titlebar"/>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/green"
+        android:text="开始外访"
+        android:textColor="@color/white"
+        android:textSize="@dimen/h1"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_appoint_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btn_save"
+        android:layout_below="@+id/title_bar">
+
+        <android.support.v4.view.PagerTabStrip
+            android:padding="8dp"
+            android:id="@+id/pts_appoint_info"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="@color/white"/>
+
+    </android.support.v4.view.ViewPager>
+
+</RelativeLayout>

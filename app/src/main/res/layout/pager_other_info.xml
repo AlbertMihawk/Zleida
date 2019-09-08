@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/listview_bg"
+              android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/listview_bg"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:paddingLeft="12dp"
+            android:text="其他信息1"
+            android:textColor="@color/text_label_color"
+            android:textSize="@dimen/h3"/>
+
+        <TextView
+            android:id="@+id/tv_remarks1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:drawablePadding="5dp"
+            android:paddingRight="20dp"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/h3"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/listview_bg"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:paddingLeft="12dp"
+            android:text="其他信息2"
+            android:textColor="@color/text_label_color"
+            android:textSize="@dimen/h3"/>
+
+        <TextView
+            android:id="@+id/tv_remarks2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:drawablePadding="5dp"
+            android:paddingRight="20dp"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/h3"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/listview_bg"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:paddingLeft="12dp"
+            android:text="其他信息3"
+            android:textColor="@color/text_label_color"
+            android:textSize="@dimen/h3"/>
+
+        <TextView
+            android:id="@+id/tv_remarks3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:drawablePadding="5dp"
+            android:paddingRight="20dp"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/h3"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/listview_bg"/>
+
+    <GridView
+        android:id="@+id/gv_project_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/listview_bg"
+        android:horizontalSpacing="3dp"
+        android:numColumns="2"
+        android:verticalSpacing="1dp"/>
+
+</LinearLayout>

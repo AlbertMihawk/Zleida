@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/include_titlebar"/>
+
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/rlv_appoint_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/listview_bg"
+        android:dividerHeight="@dimen/listview_divider"
+        android:drawSelectorOnTop="true"
+        android:divider="@color/listview_bg"
+        android:listSelector="@drawable/selector_pressed_listview"/>
+
+
+</LinearLayout>
