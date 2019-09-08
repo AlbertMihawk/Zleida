@@ -27,22 +27,22 @@ import com.zleidadr.entity.ReceivableReq;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class NoteActivity extends Activity {
-   @BindView(R.id.tv_back)
+    @Bind(R.id.tv_back)
     FrameLayout mTvBack;
-   @BindView(R.id.tv_title)
+    @Bind(R.id.tv_title)
     TextView mTvTitle;
-   @BindView(R.id.spinner_access_obj)
+    @Bind(R.id.spinner_access_obj)
     Spinner mSpinnerAccessObj;
-   @BindView(R.id.spinner_access_result)
+    @Bind(R.id.spinner_access_result)
     Spinner mSpinnerAccessResult;
-   @BindView(R.id.spinner_address_valid)
+    @Bind(R.id.spinner_address_valid)
     Spinner mSpinnerAddressValid;
-   @BindView(R.id.et_note_des)
+    @Bind(R.id.et_note_des)
     EditText mEtNoteDes;
 
     private List<Dict> mAccessObj = Zleida.sDictMap.get(Constant.DICTNAME_ACCESS_OBJECT);

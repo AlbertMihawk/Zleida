@@ -10,7 +10,6 @@ import java.util.Date;
 public class Resource extends SugarRecord implements Serializable {
 
 
-
     private String localId;
     @Expose
     private int resourceId;
@@ -29,7 +28,7 @@ public class Resource extends SugarRecord implements Serializable {
     @Expose
     private String street;
     @Expose
-    private String resourceType; //10: 图片  20：录音
+    private String resourceType; //10: 图片  20：录音 30:视频
     @Expose
     private String resourceOriginal;
 

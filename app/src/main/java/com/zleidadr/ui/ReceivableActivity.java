@@ -23,18 +23,18 @@ import com.zleidadr.manager.NetworkManager;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class ReceivableActivity extends Activity {
 
-   @BindView(R.id.tv_back)
+    @Bind(R.id.tv_back)
     FrameLayout mTvBack;
-   @BindView(R.id.tv_title)
+    @Bind(R.id.tv_title)
     TextView mTvTitle;
-   @BindView(R.id.tv_right)
+    @Bind(R.id.tv_right)
     TextView mTvRight;
-   @BindView(R.id.lv_receivable_list)
+    @Bind(R.id.lv_receivable_list)
     PullToRefreshListView mLvReceivableList;
 
     private BaseAdapter mAdapter;
@@ -196,17 +196,17 @@ public class ReceivableActivity extends Activity {
     }
 
     static class ViewHolder {
-       @BindView(R.id.tv_audit_status)
+        @Bind(R.id.tv_audit_status)
         TextView mTvAuditStatus;
-       @BindView(R.id.tv_project_code)
+        @Bind(R.id.tv_project_code)
         TextView mTvProjectCode;
-       @BindView(R.id.tv_address)
+        @Bind(R.id.tv_address)
         TextView mTvAddress;
-       @BindView(R.id.tv_receive_time)
+        @Bind(R.id.tv_receive_time)
         TextView mTvReceiveTime;
-       @BindView(R.id.ll_refuse)
+        @Bind(R.id.ll_refuse)
         LinearLayout llRefuse;
-       @BindView(R.id.tv_refuse_reason)
+        @Bind(R.id.tv_refuse_reason)
         TextView tvRefuseReason;
 
         ViewHolder(View view) {

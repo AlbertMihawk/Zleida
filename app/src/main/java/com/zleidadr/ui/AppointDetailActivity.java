@@ -35,7 +35,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import butterknife.BindView;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -43,13 +43,13 @@ public class AppointDetailActivity extends Activity {
 
     private static final String TAG = AppointDetailActivity.class.getName();
 
-    @BindView(R.id.tv_back)
+    @Bind(R.id.tv_back)
     FrameLayout mTvBack;
-    @BindView(R.id.tv_title)
+    @Bind(R.id.tv_title)
     TextView mTvTitle;
-    @BindView(R.id.pts_appoint_info)
+    @Bind(R.id.pts_appoint_info)
     PagerTabStrip mPtsAppointInfo;
-    @BindView(R.id.vp_appoint_info)
+    @Bind(R.id.vp_appoint_info)
     ViewPager mVpAppointInfo;
 
 
@@ -237,23 +237,23 @@ public class AppointDetailActivity extends Activity {
     }
 
     static class ViewHolder1 {
-       @BindView(R.id.tv_loanee_name)
+        @Bind(R.id.tv_loanee_name)
         TextView mTvLoaneeName;
-       @BindView(R.id.tv_sex)
+        @Bind(R.id.tv_sex)
         TextView mTvSex;
-       @BindView(R.id.tv_idcard)
+        @Bind(R.id.tv_idcard)
         TextView mTvIdcard;
-       @BindView(R.id.tv_mobile)
+        @Bind(R.id.tv_mobile)
         TextView mTvMobile;
-       @BindView(R.id.tv_home_address)
+        @Bind(R.id.tv_home_address)
         TextView mTvHomeAddress;
-       @BindView(R.id.tv_home)
+        @Bind(R.id.tv_home)
         TextView mTvHome;
-       @BindView(R.id.tv_business_city)
+        @Bind(R.id.tv_business_city)
         TextView mTvBusinessCity;
-       @BindView(R.id.tv_amount)
+        @Bind(R.id.tv_amount)
         TextView mTvAmount;
-       @BindView(R.id.tv_urge_date)
+        @Bind(R.id.tv_urge_date)
         TextView mTvUrgeDate;
 
         ViewHolder1(View view) {
@@ -262,23 +262,23 @@ public class AppointDetailActivity extends Activity {
     }
 
     static class ViewHolder2 {
-       @BindView(R.id.tv_authorized_agency)
+        @Bind(R.id.tv_authorized_agency)
         TextView mTvAuthorizedAgency;
-       @BindView(R.id.tv_overdue_date)
+        @Bind(R.id.tv_overdue_date)
         TextView mTvOverdueDate;
-       @BindView(R.id.tv_loanee_company)
+        @Bind(R.id.tv_loanee_company)
         TextView mTvLoaneeCompany;
-       @BindView(R.id.tv_loanee_company_address)
+        @Bind(R.id.tv_loanee_company_address)
         TextView mTvLoaneeCompanyAddress;
-       @BindView(R.id.tv_loan_date)
+        @Bind(R.id.tv_loan_date)
         TextView mTvLoanDate;
-       @BindView(R.id.tv_repayment_bank)
+        @Bind(R.id.tv_repayment_bank)
         TextView mTvRepaymentBank;
-       @BindView(R.id.tv_repayment_bank_id)
+        @Bind(R.id.tv_repayment_bank_id)
         TextView mTvRepaymentBankId;
-       @BindView(R.id.tv_receipt_name)
+        @Bind(R.id.tv_receipt_name)
         TextView mTvReceiptName;
-       @BindView(R.id.tv_project_code)
+        @Bind(R.id.tv_project_code)
         TextView mTvProjectCode;
 
         ViewHolder2(View view) {
@@ -287,13 +287,13 @@ public class AppointDetailActivity extends Activity {
     }
 
     static class ViewHolder3 {
-       @BindView(R.id.tv_remarks1)
+        @Bind(R.id.tv_remarks1)
         TextView mTvRemarks1;
-       @BindView(R.id.tv_remarks2)
+        @Bind(R.id.tv_remarks2)
         TextView mTvRemarks2;
-       @BindView(R.id.tv_remarks3)
+        @Bind(R.id.tv_remarks3)
         TextView mTvRemarks3;
-       @BindView(R.id.gv_project_image)
+        @Bind(R.id.gv_project_image)
         GridView mGvProjectImage;
 
         ViewHolder3(View view) {

@@ -13,19 +13,19 @@ import com.zleidadr.R;
 import com.zleidadr.manager.DataCleanManager;
 import com.zleidadr.manager.LoginManager;
 
-import butterknife.BindView;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SettingsActivity extends AppCompatActivity {
 
-   @BindView(R.id.tv_back)
+    @Bind(R.id.tv_back)
     FrameLayout mTvBack;
-   @BindView(R.id.tv_title)
+    @Bind(R.id.tv_title)
     TextView mTvTitle;
-   @BindView(R.id.tv_total_cache)
+    @Bind(R.id.tv_total_cache)
     TextView mTvTotalCache;
-   @BindView(R.id.tv_version_code)
+    @Bind(R.id.tv_version_code)
     TextView mTvVersionCode;
 
     private AlertDialog mDialog;

@@ -25,21 +25,21 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
-import butterknife.BindView;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class DraftActivity extends Activity {
 
-   @BindView(R.id.tv_back)
+    @Bind(R.id.tv_back)
     FrameLayout mTvBack;
-   @BindView(R.id.tv_title)
+    @Bind(R.id.tv_title)
     TextView mTvTitle;
-   @BindView(R.id.tv_right)
+    @Bind(R.id.tv_right)
     TextView mTvRight;
-   @BindView(R.id.lv_draft_list)
+    @Bind(R.id.lv_draft_list)
     ListView mLvDraftList;
-   @BindView(R.id.btn_delete)
+    @Bind(R.id.btn_delete)
     Button mBtnDelete;
 
 
@@ -179,15 +179,15 @@ public class DraftActivity extends Activity {
     }
 
     static class ViewHolder {
-       @BindView(R.id.fl_select)
+        @Bind(R.id.fl_select)
         FrameLayout mFlSelect;
-       @BindView(R.id.iv_select_icon)
+        @Bind(R.id.iv_select_icon)
         ImageView mIvSelectIcon;
-       @BindView(R.id.tv_project_code)
+        @Bind(R.id.tv_project_code)
         TextView mTvProjectCode;
-       @BindView(R.id.tv_address)
+        @Bind(R.id.tv_address)
         TextView mTvAddress;
-       @BindView(R.id.tv_receive_time)
+        @Bind(R.id.tv_receive_time)
         TextView mTvReceiveTime;
 
         ViewHolder(View view) {

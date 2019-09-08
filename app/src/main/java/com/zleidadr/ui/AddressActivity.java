@@ -21,16 +21,16 @@ import com.zleidadr.entity.ReceivableReq;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class AddressActivity extends Activity {
 
-    @BindView(R.id.tv_back)
+    @Bind(R.id.tv_back)
     FrameLayout mTvBack;
-    @BindView(R.id.tv_title)
+    @Bind(R.id.tv_title)
     TextView mTvTitle;
-    @BindView(R.id.lv_address)
+    @Bind(R.id.lv_address)
     ListView mLvAddress;
     private BaseAdapter mAdpater;
     private List<Address> mAddressList = new ArrayList<>();
@@ -129,11 +129,11 @@ public class AddressActivity extends Activity {
 
 
     static class ViewHolder {
-        @BindView(R.id.tv_address_type)
+        @Bind(R.id.tv_address_type)
         TextView tvAddressType;
-        @BindView(R.id.tv_visit_des)
+        @Bind(R.id.tv_visit_des)
         TextView tvVisitDes;
-        @BindView(R.id.tv_address)
+        @Bind(R.id.tv_address)
         TextView tvAddress;
 
         ViewHolder(View view) {

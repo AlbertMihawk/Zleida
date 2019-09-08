@@ -19,7 +19,7 @@ import com.zleidadr.manager.LoginManager;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import butterknife.BindView;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -29,13 +29,13 @@ public class LoginActivity extends Activity {
 
     private static Boolean isExit = false;
 
-   @BindView(R.id.et_username)
+    @Bind(R.id.et_username)
     EditText mEtUsername;
-   @BindView(R.id.et_password)
+    @Bind(R.id.et_password)
     EditText mEtPassword;
-   @BindView(R.id.tv_loading_text)
+    @Bind(R.id.tv_loading_text)
     TextView mTvLoadingText;
-   @BindView(R.id.inc_loading)
+    @Bind(R.id.inc_loading)
     LinearLayout mIncLoading;
 
     @Override

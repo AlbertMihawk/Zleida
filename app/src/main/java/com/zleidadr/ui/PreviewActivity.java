@@ -22,18 +22,18 @@ import com.zleidadr.manager.PhotoManager;
 import java.io.File;
 import java.util.LinkedList;
 
-import butterknife.BindView;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class PreviewActivity extends AppCompatActivity {
 
     private static final String TAG = PreviewActivity.class.getName();
 
-   @BindView(R.id.tv_back)
+    @Bind(R.id.tv_back)
     FrameLayout mTvBack;
-   @BindView(R.id.tv_title)
+    @Bind(R.id.tv_title)
     TextView mTvTitle;
-   @BindView(R.id.vp_photos)
+    @Bind(R.id.vp_photos)
     ViewPager mVpPhotos;
     private LinkedList<File> mFiles;
     private PagerAdapter mPagerAdapter;

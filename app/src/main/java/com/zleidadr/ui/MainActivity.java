@@ -22,7 +22,7 @@
 //import java.util.Timer;
 //import java.util.TimerTask;
 //
-//import butterknife.BindView;
+//import butterknife.Bind;
 //import butterknife.ButterKnife;
 //
 //public class MainActivity extends Activity {
@@ -30,27 +30,27 @@
 //
 //    private static Boolean isExit = false;
 //
-//   @BindView(R.id.tv_left_small)
+//    @Bind(R.id.tv_left_small)
 //    TextView mTvLeftSmall;
-//   @BindView(R.id.iv_right)
+//    @Bind(R.id.iv_right)
 //    ImageView mIvRight;
-//   @BindView(R.id.tv_await)
+//    @Bind(R.id.tv_await)
 //    TextView mTvAwait;
-//   @BindView(R.id.tv_success)
+//    @Bind(R.id.tv_success)
 //    TextView mTvSuccess;
-//   @BindView(R.id.tv_doing)
+//    @Bind(R.id.tv_doing)
 //    TextView mTvDoing;
-//   @BindView(R.id.tv_overdue)
+//    @Bind(R.id.tv_overdue)
 //    TextView mTvOverdue;
-//   @BindView(R.id.tv_total)
+//    @Bind(R.id.tv_total)
 //    TextView mTvTotal;
-//   @BindView(R.id.ll_appoint)
+//    @Bind(R.id.ll_appoint)
 //    LinearLayout mLlAppoint;
-//   @BindView(R.id.ll_draft)
+//    @Bind(R.id.ll_draft)
 //    LinearLayout mLlDraft;
-//   @BindView(R.id.ll_receivable)
+//    @Bind(R.id.ll_receivable)
 //    LinearLayout mLlReceivable;
-//   @BindView(R.id.ll_stay)
+//    @Bind(R.id.ll_stay)
 //    LinearLayout mLlStay;
 //
 //    private Operator operator;

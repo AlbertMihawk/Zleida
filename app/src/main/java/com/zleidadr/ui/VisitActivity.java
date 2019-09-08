@@ -21,43 +21,44 @@ import com.zleidadr.manager.AudioManager;
 import com.zleidadr.manager.DataCleanManager;
 import com.zleidadr.manager.LoginManager;
 import com.zleidadr.manager.PhotoManager;
+import com.zleidadr.manager.VideoManager;
 import com.zleidadr.sugarDb.DbManager;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class VisitActivity extends Activity {
 
-   @BindView(R.id.tv_back)
+    @Bind(R.id.tv_back)
     FrameLayout mTvBack;
-   @BindView(R.id.tv_title)
+    @Bind(R.id.tv_title)
     TextView mTvTitle;
-   @BindView(R.id.tv_address)
+    @Bind(R.id.tv_address)
     TextView mTvAddress;
-   @BindView(R.id.tv_authorized_agency)
+    @Bind(R.id.tv_authorized_agency)
     TextView mTvAuthorizedAgency;
-   @BindView(R.id.tv_loanee_name)
+    @Bind(R.id.tv_loanee_name)
     TextView mTvLoaneeName;
-   @BindView(R.id.tv_authorize_amount)
+    @Bind(R.id.tv_authorize_amount)
     TextView mTvAuthorizeAmount;
-   @BindView(R.id.tv_overdue_date)
+    @Bind(R.id.tv_overdue_date)
     TextView mTvOverdueDate;
-   @BindView(R.id.tv_camera_status)
+    @Bind(R.id.tv_camera_status)
     TextView mTvCameraStatus;
-   @BindView(R.id.tv_recorder_status)
+    @Bind(R.id.tv_recorder_status)
     TextView mTvRecorderStatus;
-   @BindView(R.id.tv_note_status)
+    @Bind(R.id.tv_note_status)
     TextView mTvNoteStatus;
-   @BindView(R.id.btn_submit_box)
+    @Bind(R.id.btn_submit_box)
     Button mBtnSubmit;
-   @BindView(R.id.btn_upload)
+    @Bind(R.id.btn_upload)
     Button mBtnUpload;
-   @BindView(R.id.inc_loading)
+    @Bind(R.id.inc_loading)
     LinearLayout mIncLoading;
-   @BindView(R.id.tv_loading_text)
+    @Bind(R.id.tv_loading_text)
     TextView mTvLoadingText;
 
     private ReceivableReq mReceivableReq;
@@ -124,8 +125,8 @@ public class VisitActivity extends Activity {
             if (count >= 3) {
                 mTvCameraStatus.setText("共" + count + "张");
                 return true;
-            }else{
-                 mTvCameraStatus.setText(count+"/3张");
+            } else {
+                mTvCameraStatus.setText(count + "/3张");
             }
         }
         return false;
@@ -201,6 +202,13 @@ public class VisitActivity extends Activity {
                 intent.putExtra(Constant.BUNDLE_STR_LOCALID, mReceivableReq.getId() + "");
                 startActivity(intent);
                 break;
+            case R.id.iv_video_perform:
+                mReceivableReq.setState(Constant.STATE_DRAFT);
+                mReceivableReq.save();
+                intent.setClass(VisitActivity.this, PhotoActivity.class);
+                intent.putExtra(Constant.BUNDLE_STR_LOCALID, mReceivableReq.getId() + "");
+                startActivity(intent);
+                break;
             case R.id.iv_note_perform:
                 mReceivableReq.setState(Constant.STATE_DRAFT);
                 mReceivableReq.save();
@@ -218,8 +226,9 @@ public class VisitActivity extends Activity {
                 mIncLoading.setVisibility(View.VISIBLE);
                 Api.getInstance().saveReceivableApi(LoginManager.getInstance().getOperator(VisitActivity.this).getOperatorId(),
                         mReceivableReq,
-                        PhotoManager.getPhotoFiles(VisitActivity.this, mReceivableReq.getId()+""),
+                        PhotoManager.getPhotoFiles(VisitActivity.this, mReceivableReq.getId() + ""),
                         AudioManager.getInstance().getAudioFiles(),
+                        VideoManager.getVideoFiles(VisitActivity.this, mReceivableReq.getId() + ""),
                         new Api.Callback<String>() {
 
                             @Override
@@ -235,7 +244,7 @@ public class VisitActivity extends Activity {
                                         startActivity(intent);
                                         //TODO 删除外访文件,修改外访记录数据Db
                                         DataCleanManager.clearPath(CommonUtils.getReceivableDir(VisitActivity.this, mReceivableReq.getId() + ""));
-                                        DbManager.saveReceivableReqDb(mReceivableReq,Constant.STATE_END);
+                                        DbManager.saveReceivableReqDb(mReceivableReq, Constant.STATE_END);
                                     }
                                 });
                             }

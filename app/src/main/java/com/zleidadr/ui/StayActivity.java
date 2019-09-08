@@ -22,6 +22,7 @@ import com.zleidadr.manager.AudioManager;
 import com.zleidadr.manager.DataCleanManager;
 import com.zleidadr.manager.LoginManager;
 import com.zleidadr.manager.PhotoManager;
+import com.zleidadr.manager.VideoManager;
 import com.zleidadr.sugarDb.DbManager;
 
 import java.util.HashSet;
@@ -30,22 +31,22 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import butterknife.BindView;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class StayActivity extends AppCompatActivity {
 
 
-   @BindView(R.id.tv_back)
+    @Bind(R.id.tv_back)
     FrameLayout mTvBack;
-   @BindView(R.id.tv_title)
+    @Bind(R.id.tv_title)
     TextView mTvTitle;
-   @BindView(R.id.tv_right)
+    @Bind(R.id.tv_right)
     TextView mTvRight;
-   @BindView(R.id.lv_stay_list)
+    @Bind(R.id.lv_stay_list)
     ListView mLvStayList;
-   @BindView(R.id.btn_upload)
+    @Bind(R.id.btn_upload)
     Button mBtnUpload;
 
     private BaseAdapter mAdapter;
@@ -166,15 +167,15 @@ public class StayActivity extends AppCompatActivity {
     }
 
     static class ViewHolder {
-       @BindView(R.id.fl_select)
+        @Bind(R.id.fl_select)
         FrameLayout mLlSelect;
-       @BindView(R.id.iv_select_icon)
+        @Bind(R.id.iv_select_icon)
         ImageView mIvSelectIcon;
-       @BindView(R.id.tv_project_code)
+        @Bind(R.id.tv_project_code)
         TextView mTvProjectCode;
-       @BindView(R.id.tv_address)
+        @Bind(R.id.tv_address)
         TextView mTvAddress;
-       @BindView(R.id.tv_receive_time)
+        @Bind(R.id.tv_receive_time)
         TextView mTvReceiveTime;
 
         ViewHolder(View view) {
@@ -192,6 +193,7 @@ public class StayActivity extends AppCompatActivity {
                     receivableReq,
                     PhotoManager.getPhotoFiles(StayActivity.this, receivableReq.getId() + ""),
                     AudioManager.getAudioFiles(StayActivity.this, receivableReq.getId() + ""),
+                    VideoManager.getVideoFiles(StayActivity.this, receivableReq.getId() + ""),
                     new Api.Callback<String>() {
 
                         @Override

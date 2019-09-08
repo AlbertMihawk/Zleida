@@ -23,27 +23,27 @@ import com.zleidadr.manager.AudioManager;
 
 import java.io.File;
 
-import butterknife.BindView;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class RecorderActivity extends LocationBaseActivity {
 
-   @BindView(R.id.tv_back)
+    @Bind(R.id.tv_back)
     FrameLayout mTvBack;
-   @BindView(R.id.tv_title)
+    @Bind(R.id.tv_title)
     TextView mTvTitle;
-   @BindView(R.id.tv_record_time)
+    @Bind(R.id.tv_record_time)
     TextView mTvRecordTime;
-   @BindView(R.id.iv_cancel)
+    @Bind(R.id.iv_cancel)
     ImageView mIvCancel;
-   @BindView(R.id.iv_record_stop)
+    @Bind(R.id.iv_record_stop)
     ImageView mIvRecordStop;
-   @BindView(R.id.iv_pause_resume)
+    @Bind(R.id.iv_pause_resume)
     ImageView mIvPauseResume;
-   @BindView(R.id.iv_right)
+    @Bind(R.id.iv_right)
     ImageView mIvRight;
-   @BindView(R.id.fl_right)
+    @Bind(R.id.fl_right)
     FrameLayout mFlRight;
     private AlertDialog mDialog;
     private AudioManager mAudioManager;

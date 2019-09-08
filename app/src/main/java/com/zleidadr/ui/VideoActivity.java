@@ -38,8 +38,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class PhotoActivity extends LocationBaseActivity {
-    private static final String TAG = PhotoActivity.class.getName();
+public class VideoActivity extends LocationBaseActivity {
+    private static final String TAG = VideoActivity.class.getName();
 
     @Bind(R.id.tv_back)
     FrameLayout mTvBack;
@@ -75,7 +75,7 @@ public class PhotoActivity extends LocationBaseActivity {
                 mReceivableReq.setResourcesList(list);
             }
         } else {
-            Toast.makeText(PhotoActivity.this, "此条催收记录不存在", Toast.LENGTH_SHORT).show();
+            Toast.makeText(VideoActivity.this, "此条催收记录不存在", Toast.LENGTH_SHORT).show();
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -102,7 +102,7 @@ public class PhotoActivity extends LocationBaseActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        mFiles = PhotoManager.getPhotoFiles(PhotoActivity.this, mLocalId);
+        mFiles = PhotoManager.getPhotoFiles(VideoActivity.this, mLocalId);
         mAdapter.notifyDataSetChanged();
 
     }
@@ -189,7 +189,7 @@ public class PhotoActivity extends LocationBaseActivity {
                 ImageLocalLoader.getInstance().setImage(holder.mIvPhoto, p.x / 3, mFiles.get(position).getAbsolutePath(), new ImageLocalLoader.ImageLocalLoaderListener() {
                     @Override
                     public void onSetListener(final ImageView imageView, final Bitmap bitmap) {
-                        PhotoActivity.this.runOnUiThread(new Runnable() {
+                        VideoActivity.this.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 imageView.setImageBitmap(bitmap);
@@ -229,7 +229,7 @@ public class PhotoActivity extends LocationBaseActivity {
                     mAdapter.notifyDataSetChanged();
                 } else {
                     Intent intent = new Intent();
-                    intent.setClass(PhotoActivity.this, PreviewActivity.class);
+                    intent.setClass(VideoActivity.this, PreviewActivity.class);
                     intent.putExtra("page", position);
                     intent.putExtra(Constant.BUNDLE_STR_LOCALID, mReceivableReq.getId() + "");
                     startActivity(intent);
@@ -246,7 +246,7 @@ public class PhotoActivity extends LocationBaseActivity {
                     Toast.makeText(this, "照片数量为3至9张", Toast.LENGTH_SHORT).show();
                     break;
                 }
-                Zleida.sCurrentPhotoFile = PhotoManager.takePhoto(PhotoActivity.this, mLocalId);
+                Zleida.sCurrentPhotoFile = PhotoManager.takePhoto(VideoActivity.this, mLocalId);
                 break;
             case R.id.iv_delete:
                 deletePhotoFile();
@@ -254,7 +254,7 @@ public class PhotoActivity extends LocationBaseActivity {
                 mTvRight.setText("编辑");
                 mIvDelete.setVisibility(View.INVISIBLE);
                 mSelectIsValid = false;
-                mFiles = PhotoManager.getPhotoFiles(PhotoActivity.this, ReceivableReq.last(ReceivableReq.class)
+                mFiles = PhotoManager.getPhotoFiles(VideoActivity.this, ReceivableReq.last(ReceivableReq.class)
                         .getId() + "");
                 mAdapter.notifyDataSetChanged();
                 break;
@@ -284,7 +284,7 @@ public class PhotoActivity extends LocationBaseActivity {
                 resource.setDistrict(mBdLocation.getDistrict());
                 resource.setStreet(mBdLocation.getStreet());
                 if (TextUtils.isEmpty(resource.getLocation())) {
-                    Toast.makeText(PhotoActivity.this, "定位信息获取失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(VideoActivity.this, "定位信息获取失败", Toast.LENGTH_SHORT).show();
                 }
                 resource.setResourceOriginal(Zleida.sCurrentPhotoFile.getName());
                 resource.setResourceType(Constant.RESOURCE_PHOTO);

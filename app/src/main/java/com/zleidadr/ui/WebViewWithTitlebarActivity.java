@@ -19,7 +19,7 @@ import android.widget.TextView;
 import com.zleidadr.R;
 import com.zleidadr.common.Logger;
 
-import butterknife.BindView;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -35,11 +35,11 @@ public class WebViewWithTitlebarActivity extends Activity {
     public static final String BUNDLE_TITLE = "title";
     public static final String BUNDLE_WEB_URL = "url";
     private static final String TAG = WebViewWithTitlebarActivity.class.getName();
-   @BindView(R.id.webView)
+    @Bind(R.id.webView)
     WebView mWebView;
-   @BindView(R.id.tv_back)
+    @Bind(R.id.tv_back)
     FrameLayout mIvTitleBack;
-   @BindView(R.id.tv_title)
+    @Bind(R.id.tv_title)
     TextView mTvTitleCenterText;
 
     private String mWebUrl;
