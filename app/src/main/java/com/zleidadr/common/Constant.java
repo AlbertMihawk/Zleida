@@ -20,8 +20,9 @@ public class Constant {
     public static final String SEX_MALE_STR = "男";
     public static final String SEX_FEMALE_STR = "女";
     public static final String RESOURCE_PHOTO = "10";
-
     public static final String RESOURCE_AUDIO = "20";
+    public static final String RESOURCE_VIDEO = "30";
+
     public static final String DICTKEY_SELF = "1";// 本人
 
 

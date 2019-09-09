@@ -224,7 +224,7 @@ public class RecorderActivity extends LocationBaseActivity {
         resource.setDistrict(mBdLocation.getDistrict());
         resource.setStreet(mBdLocation.getStreet());
         if (TextUtils.isEmpty(resource.getLocation())) {
-            Toast.makeText(RecorderActivity.this, "定位信息获取失败", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(RecorderActivity.this, "定位信息获取失败", Toast.LENGTH_SHORT).show();
         }
         resource.setResourceOriginal(new File(mAudioManager.getRecordingFile()).getName());
         resource.setResourceType(Constant.RESOURCE_AUDIO);

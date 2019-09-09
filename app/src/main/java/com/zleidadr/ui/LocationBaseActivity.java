@@ -2,6 +2,7 @@ package com.zleidadr.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.StrictMode;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -15,6 +16,14 @@ public class LocationBaseActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initPhotoError();
+    }
+
+    private void initPhotoError() {
+        // android 7.0系统解决拍照的问题
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
+        builder.detectFileUriExposure();
     }
 
     @Override

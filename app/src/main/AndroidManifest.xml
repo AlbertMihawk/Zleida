@@ -58,11 +58,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--        <activity-->
-<!--            android:name="com.zleidadr.ui.MainActivity"-->
-<!--            android:launchMode="singleTask"-->
-<!--            android:screenOrientation="portrait"-->
-<!--            android:theme="@style/AppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name="com.zleidadr.ui.MainActivity"-->
+        <!--            android:launchMode="singleTask"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/AppTheme" />-->
         <activity
             android:name="com.zleidadr.ui.MainV2Activity"
             android:launchMode="singleTask"
@@ -130,6 +130,14 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name="com.zleidadr.ui.WebViewWithTitlebarActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.VideoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.VideoActivity2"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 

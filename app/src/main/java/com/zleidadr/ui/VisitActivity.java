@@ -50,6 +50,8 @@ public class VisitActivity extends Activity {
     TextView mTvCameraStatus;
     @Bind(R.id.tv_recorder_status)
     TextView mTvRecorderStatus;
+    @Bind(R.id.tv_video_status)
+    TextView mTvVideoStatus;
     @Bind(R.id.tv_note_status)
     TextView mTvNoteStatus;
     @Bind(R.id.btn_submit_box)
@@ -93,7 +95,7 @@ public class VisitActivity extends Activity {
     }
 
     private void checkUploadValide() {
-        if (checkAddress() & checkPhoto() & checkAudio() & checkNote()) {
+        if (checkAddress() & checkPhoto() & checkAudio() & checkVideo() & checkNote()) {
             mBtnSubmit.setBackgroundResource(R.color.green);
             mBtnSubmit.setClickable(true);
             mBtnUpload.setBackgroundResource(R.color.green);
@@ -127,6 +129,25 @@ public class VisitActivity extends Activity {
                 return true;
             } else {
                 mTvCameraStatus.setText(count + "/3张");
+            }
+        }
+        return false;
+    }
+
+    private boolean checkVideo() {
+        if (mReceivableReq.getResourcesList() != null) {
+            ArrayList<Resource> list = (ArrayList<Resource>) mReceivableReq.getResourcesList();
+            int count = 0;
+            for (Resource res : list) {
+                if (res.getResourceType().equals(Constant.RESOURCE_VIDEO)) {
+                    count++;
+                }
+            }
+            if (count >= 1) {
+                mTvVideoStatus.setText("共" + count + "个");
+                return true;
+            } else {
+                mTvVideoStatus.setText(count + "/1个");
             }
         }
         return false;
@@ -177,43 +198,39 @@ public class VisitActivity extends Activity {
         mTvOverdueDate.setText(mReceivableReq.getOverdue_date());
     }
 
-    @OnClick({R.id.iv_address_perform, R.id.iv_camera_perform, R.id.iv_recorder_perform, R.id.iv_note_perform, R.id.btn_submit_box, R.id.btn_upload})
+    @OnClick({R.id.iv_address_perform, R.id.iv_camera_perform, R.id.iv_recorder_perform, R.id.iv_video_perform, R.id.iv_note_perform, R.id.btn_submit_box, R.id.btn_upload})
     public void performBtn(View view) {
         Intent intent = new Intent();
+        intent.putExtra(Constant.BUNDLE_STR_LOCALID, mReceivableReq.getId() + "");
         switch (view.getId()) {
             case R.id.iv_address_perform:
                 mReceivableReq.setState(Constant.STATE_DRAFT);
                 mReceivableReq.save();
                 intent.setClass(VisitActivity.this, AddressActivity.class);
-                intent.putExtra(Constant.BUNDLE_STR_LOCALID, mReceivableReq.getId() + "");
                 startActivity(intent);
                 break;
             case R.id.iv_camera_perform:
                 mReceivableReq.setState(Constant.STATE_DRAFT);
                 mReceivableReq.save();
                 intent.setClass(VisitActivity.this, PhotoActivity.class);
-                intent.putExtra(Constant.BUNDLE_STR_LOCALID, mReceivableReq.getId() + "");
                 startActivity(intent);
                 break;
             case R.id.iv_recorder_perform:
                 mReceivableReq.setState(Constant.STATE_DRAFT);
                 mReceivableReq.save();
                 intent.setClass(VisitActivity.this, RecorderActivity.class);
-                intent.putExtra(Constant.BUNDLE_STR_LOCALID, mReceivableReq.getId() + "");
                 startActivity(intent);
                 break;
             case R.id.iv_video_perform:
                 mReceivableReq.setState(Constant.STATE_DRAFT);
                 mReceivableReq.save();
-                intent.setClass(VisitActivity.this, PhotoActivity.class);
-                intent.putExtra(Constant.BUNDLE_STR_LOCALID, mReceivableReq.getId() + "");
+                intent.setClass(VisitActivity.this, VideoActivity.class);
                 startActivity(intent);
                 break;
             case R.id.iv_note_perform:
                 mReceivableReq.setState(Constant.STATE_DRAFT);
                 mReceivableReq.save();
                 intent.setClass(VisitActivity.this, NoteActivity.class);
-                intent.putExtra(Constant.BUNDLE_STR_LOCALID, mReceivableReq.getId() + "");
                 startActivity(intent);
                 break;
             case R.id.btn_submit_box:
