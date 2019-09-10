@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingBottom="8dip"
-                android:paddingTop="5dip">
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingBottom="8dip"
+    android:paddingTop="5dip">
 
     <ProgressBar
         android:id="@+id/pull_to_refresh_load_progress"
@@ -14,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:indeterminate="true"
-        android:paddingRight="100dp"/>
+        android:paddingRight="100dp" />
 
     <TextView
         android:id="@+id/pull_to_refresh_loadmore_text"
@@ -27,6 +27,6 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@android:color/darker_gray"
         android:textSize="@dimen/h2"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
 </RelativeLayout>

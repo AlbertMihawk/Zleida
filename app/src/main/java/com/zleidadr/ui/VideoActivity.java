@@ -4,16 +4,13 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
-import android.os.Message;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.View;
@@ -30,19 +27,13 @@ import android.widget.Toast;
 import com.zleidadr.R;
 import com.zleidadr.Zleida;
 import com.zleidadr.common.Constant;
-import com.zleidadr.common.ImageLocalLoader;
 import com.zleidadr.entity.ReceivableReq;
 import com.zleidadr.entity.Resource;
-import com.zleidadr.manager.LoginManager;
-import com.zleidadr.manager.VideoManager;
 import com.zleidadr.manager.VideoManager;
 import com.zleidadr.sugarDb.DbManager;
 
 import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 
@@ -197,20 +188,34 @@ public class VideoActivity extends LocationBaseActivity {
                 }
                 Point p = new Point();
                 getWindowManager().getDefaultDisplay().getSize(p);
-                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(p.x / 3, p.x * 3 / 12);
-
+                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(p.x / 3, p.x * 5 / 12);
+                holder.mIvVideo.setLayoutParams(params);
 
                 File file = mFiles.get(position);
-                Uri uri = Uri.fromFile(file);
-                Cursor cursor = VideoActivity.this.getContentResolver().query(uri, null, null, null, null);
-                if (cursor != null && cursor.moveToNext()) {
-                    int id = cursor.getInt(cursor.getColumnIndex(MediaStore.Video.VideoColumns._ID));
-                    // 视频路径
-                    String filePath = cursor.getString(cursor.getColumnIndex(MediaStore.Video.VideoColumns.DATA));
-                    // ThumbnailUtils类2.2以上可用  Todo 获取视频缩略图
-                    Bitmap bitmap = ThumbnailUtils.createVideoThumbnail(filePath, MediaStore.Images.Thumbnails.MICRO_KIND);
-                    holder.mIvVideo.setImageBitmap(bitmap);
-                }
+//                Uri uri = Uri.fromFile(file);
+//                Cursor cursor = VideoActivity.this.getContentResolver().query(uri, new String[]{
+//                        MediaStore.Video.Media.DATA, MediaStore.Video.Media._ID}, null, null, null);
+//                String[] proj = {MediaStore.Images.Media.DATA};
+//
+//                CursorLoader loader = new CursorLoader(VideoActivity.this, uri, proj, null, null, null);
+//
+//                cursor = loader.loadInBackground();
+//
+//                int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+//
+//                cursor.moveToFirst();
+//                String string = cursor.getString(column_index);
+//
+//                if (cursor != null && cursor.moveToNext()) {
+//                    int id = cursor.getInt(cursor.getColumnIndex(MediaStore.Video.VideoColumns._ID));
+//                    // 视频路径
+//                    String filePath = cursor.getString(cursor.getColumnIndex(MediaStore.Video.VideoColumns.DATA));
+//                    // ThumbnailUtils类2.2以上可用  Todo 获取视频缩略图
+//                    Bitmap bitmap = ThumbnailUtils.createVideoThumbnail(filePath, MediaStore.Images.Thumbnails.MICRO_KIND);
+                Bitmap videoThumbnail = ThumbnailUtils.createVideoThumbnail(file.getPath(), MediaStore.Video.Thumbnails.MINI_KIND);
+                holder.mIvVideo.setImageBitmap(videoThumbnail);
+//                    holder.mIvVideo.setImageBitmap(bitmap);
+//                }
 
 //                //TODO 视频缩略图读取
 //                ImageLocalLoader.getInstance().setImage(holder.mIvVideo, p.x / 3, mFiles.get(position).getAbsolutePath(), new ImageLocalLoader.ImageLocalLoaderListener() {
@@ -225,8 +230,9 @@ public class VideoActivity extends LocationBaseActivity {
 //                    }
 //                });
 
+//
+//                holder.mTvVideo.setText(mFiles.get(position).getName());
 
-                holder.mIvVideo.setLayoutParams(params);
                 if (mSelectIsValid) {
                     holder.mIvSelectStatus.setVisibility(View.VISIBLE);
                     if (mNumSet.contains(position)) {
@@ -278,6 +284,7 @@ public class VideoActivity extends LocationBaseActivity {
                     break;
                 }
                 Zleida.sCurrentVideoFile = VideoManager.takeVideo(VideoActivity.this, mLocalId);
+//                VideoManager.takeVideo2(this);
                 break;
             case R.id.iv_delete:
                 deleteVideoFile();
@@ -340,9 +347,16 @@ public class VideoActivity extends LocationBaseActivity {
                 if (TextUtils.isEmpty(resource.getLocation())) {
 //                    Toast.makeText(PhotoActivity.this, "定位信息获取失败", Toast.LENGTH_SHORT).show();
                 }
-//                Uri uri = data.getData();
-//                String path = uri.toString().split(":")[1];
-                resource.setResourceOriginal(Zleida.sCurrentVideoFile.getName());
+                Uri uri = data.getData();
+//                Cursor cursor = this.getContentResolver().query(uri, null, null, null, null);
+//                if (cursor != null && cursor.moveToNext()) {
+////                    int id = cursor.getInt(cursor.getColumnIndex(MediaStore.Video.VideoColumns._ID));
+//                    // 视频路径
+//                    String thumbnailPath = cursor.getString(cursor.getColumnIndex(MediaStore.Video.VideoColumns.DATA));
+//                    resource.setResourceThumbnail(thumbnailPath);
+//                }
+                String path = uri.toString().split(":")[1];
+                resource.setResourceOriginal(path);
                 resource.setResourceType(Constant.RESOURCE_VIDEO);
                 resource.save();
                 list.add(resource);
@@ -362,6 +376,8 @@ public class VideoActivity extends LocationBaseActivity {
     static class ViewHolder {
         @Bind(R.id.iv_video)
         ImageView mIvVideo;
+        //        @Bind(R.id.tv_video)
+//        TextView mTvVideo;
         @Bind(R.id.iv_select_status)
         ImageView mIvSelectStatus;
 

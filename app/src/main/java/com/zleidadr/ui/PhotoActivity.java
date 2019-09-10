@@ -6,10 +6,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Point;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
@@ -100,7 +98,6 @@ public class PhotoActivity extends LocationBaseActivity {
 
         initView();
     }
-
 
 
     @Override

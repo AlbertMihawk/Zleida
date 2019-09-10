@@ -536,6 +536,9 @@ public class Api {
         for (File audioFile : audioFiles) {
             meb.addBinaryBody(audioFile.getName(), audioFile);
         }
+        for (File videoFile : videoFiles) {
+            meb.addBinaryBody(videoFile.getName(), videoFile);
+        }
         meb.addTextBody("jsonParams", json, ContentType.create("text/plain", Consts.UTF_8));
 
         post.setEntity(meb.build());

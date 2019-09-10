@@ -67,7 +67,7 @@ public class MyAppointActivity extends Activity {
         });
         mTvTitle.setVisibility(View.VISIBLE);
         mTvTitle.setText("我的外催单");
-        mTvRight.setVisibility(View.VISIBLE);
+        mTvRight.setVisibility(View.INVISIBLE);
         mTvRight.setText("筛选");
         mTvRight.setOnClickListener(new View.OnClickListener() {
             @Override

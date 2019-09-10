@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/listview_bg"
-              android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/listview_bg"
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
-                android:background="@color/listview_bg"/>
+                android:background="@color/listview_bg" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,7 +36,7 @@
                     android:paddingLeft="12dp"
                     android:text="委托方"
                     android:textColor="@color/text_label_color"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
                 <TextView
                     android:id="@+id/tv_authorized_agency"
@@ -46,14 +46,14 @@
                     android:drawablePadding="5dp"
                     android:paddingRight="20dp"
                     android:textColor="@color/text_black"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/listview_bg"/>
+                android:background="@color/listview_bg" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -72,7 +72,7 @@
                     android:paddingLeft="12dp"
                     android:text="逾期时间"
                     android:textColor="@color/text_label_color"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
                 <TextView
                     android:id="@+id/tv_overdue_date"
@@ -82,14 +82,14 @@
                     android:drawablePadding="5dp"
                     android:paddingRight="20dp"
                     android:textColor="@color/text_black"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/listview_bg"/>
+                android:background="@color/listview_bg" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -108,7 +108,7 @@
                     android:paddingLeft="12dp"
                     android:text="公司名"
                     android:textColor="@color/text_label_color"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
                 <TextView
                     android:id="@+id/tv_loanee_company"
@@ -118,14 +118,14 @@
                     android:drawablePadding="5dp"
                     android:paddingRight="20dp"
                     android:textColor="@color/text_black"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/listview_bg"/>
+                android:background="@color/listview_bg" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -144,7 +144,7 @@
                     android:paddingLeft="12dp"
                     android:text="公司地址"
                     android:textColor="@color/text_label_color"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
                 <TextView
                     android:id="@+id/tv_loanee_company_address"
@@ -154,14 +154,14 @@
                     android:drawablePadding="5dp"
                     android:paddingRight="20dp"
                     android:textColor="@color/text_black"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/listview_bg"/>
+                android:background="@color/listview_bg" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -180,7 +180,7 @@
                     android:paddingLeft="12dp"
                     android:text="贷款时间"
                     android:textColor="@color/text_label_color"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
                 <TextView
                     android:id="@+id/tv_loan_date"
@@ -190,14 +190,14 @@
                     android:drawablePadding="5dp"
                     android:paddingRight="20dp"
                     android:textColor="@color/text_black"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/listview_bg"/>
+                android:background="@color/listview_bg" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -216,7 +216,7 @@
                     android:paddingLeft="12dp"
                     android:text="还款银行"
                     android:textColor="@color/text_label_color"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
                 <TextView
                     android:id="@+id/tv_repayment_bank"
@@ -226,14 +226,14 @@
                     android:drawablePadding="5dp"
                     android:paddingRight="20dp"
                     android:textColor="@color/text_black"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/listview_bg"/>
+                android:background="@color/listview_bg" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -252,7 +252,7 @@
                     android:paddingLeft="12dp"
                     android:text="还款账户"
                     android:textColor="@color/text_label_color"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
                 <TextView
                     android:id="@+id/tv_repayment_bank_id"
@@ -262,14 +262,14 @@
                     android:drawablePadding="5dp"
                     android:paddingRight="20dp"
                     android:textColor="@color/text_black"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/listview_bg"/>
+                android:background="@color/listview_bg" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -288,7 +288,7 @@
                     android:paddingLeft="12dp"
                     android:text="收款人姓名"
                     android:textColor="@color/text_label_color"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
                 <TextView
                     android:id="@+id/tv_receipt_name"
@@ -298,14 +298,14 @@
                     android:drawablePadding="5dp"
                     android:paddingRight="20dp"
                     android:textColor="@color/text_black"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/listview_bg"/>
+                android:background="@color/listview_bg" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -324,7 +324,7 @@
                     android:paddingLeft="12dp"
                     android:text="委案编号"
                     android:textColor="@color/text_label_color"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
                 <TextView
                     android:id="@+id/tv_project_code"
@@ -334,7 +334,7 @@
                     android:drawablePadding="5dp"
                     android:paddingRight="20dp"
                     android:textColor="@color/text_black"
-                    android:textSize="@dimen/h3"/>
+                    android:textSize="@dimen/h3" />
 
             </LinearLayout>
 

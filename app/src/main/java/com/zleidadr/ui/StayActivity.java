@@ -73,7 +73,7 @@ public class StayActivity extends AppCompatActivity {
         });
         mTvTitle.setVisibility(View.VISIBLE);
         mTvTitle.setText("提交箱");
-        mTvRight.setVisibility(View.VISIBLE);
+        mTvRight.setVisibility(View.INVISIBLE);
         mTvRight.setText("筛选");
         mTvRight.setOnClickListener(new View.OnClickListener() {
             @Override

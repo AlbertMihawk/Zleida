@@ -12,10 +12,10 @@
         layout="@layout/include_titlebar_v2" />
 
     <!--<TextView-->
-        <!--android:id="@+id/temp"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="20dp"-->
-        <!--android:visibility="gone" />-->
+    <!--android:id="@+id/temp"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="20dp"-->
+    <!--android:visibility="gone" />-->
 
     <cn.lightsky.infiniteindicator.InfiniteIndicator
         android:id="@+id/defaultIndicator"

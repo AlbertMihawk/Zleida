@@ -1,9 +1,6 @@
 package com.zleidadr.ui;
 
-import android.Manifest;
 import android.content.DialogInterface;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -163,7 +160,7 @@ public class AudioActivity extends AppCompatActivity {
                 }).setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        List<Resource> list = Resource.find(Resource.class, "resource_original = ?",mFiles.get(position).getName());
+                        List<Resource> list = Resource.find(Resource.class, "resource_original = ?", mFiles.get(position).getName());
                         for (Resource resource : list) {
                             resource.delete();
                         }

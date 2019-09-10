@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
@@ -28,7 +27,7 @@
                 android:text="待审核"
                 android:textColor="@color/text_green"
                 android:textSize="@dimen/h5"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
         </FrameLayout>
 
@@ -45,7 +44,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/listview_bg"/>
+        android:background="@color/listview_bg" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,7 +62,7 @@
             android:paddingLeft="20dp"
             android:text="委案编号"
             android:textColor="@color/text_label_color"
-            android:textSize="@dimen/h3"/>
+            android:textSize="@dimen/h3" />
 
         <TextView
             android:id="@+id/tv_project_code"
@@ -73,14 +72,14 @@
             android:drawablePadding="5dp"
             android:paddingRight="20dp"
             android:textColor="@color/text_black"
-            android:textSize="@dimen/h3"/>
+            android:textSize="@dimen/h3" />
 
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/listview_bg"/>
+        android:background="@color/listview_bg" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -98,7 +97,7 @@
             android:paddingLeft="20dp"
             android:text="外访地址"
             android:textColor="@color/text_label_color"
-            android:textSize="@dimen/h3"/>
+            android:textSize="@dimen/h3" />
 
         <TextView
             android:id="@+id/tv_address"
@@ -108,14 +107,14 @@
             android:drawablePadding="5dp"
             android:paddingRight="20dp"
             android:textColor="@color/text_black"
-            android:textSize="@dimen/h3"/>
+            android:textSize="@dimen/h3" />
 
     </LinearLayout>
 
     <View
-    android:layout_width="match_parent"
-    android:layout_height="1dp"
-    android:background="@color/listview_bg"/>
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/listview_bg" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -133,7 +132,7 @@
             android:paddingLeft="20dp"
             android:text="外访时间"
             android:textColor="@color/text_label_color"
-            android:textSize="@dimen/h3"/>
+            android:textSize="@dimen/h3" />
 
         <TextView
             android:id="@+id/tv_receive_time"
@@ -143,14 +142,14 @@
             android:drawablePadding="5dp"
             android:paddingRight="20dp"
             android:textColor="@color/text_black"
-            android:textSize="@dimen/h3"/>
+            android:textSize="@dimen/h3" />
 
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/listview_bg"/>
+        android:background="@color/listview_bg" />
 
     <LinearLayout
         android:id="@+id/ll_refuse"
@@ -170,7 +169,7 @@
             android:paddingLeft="20dp"
             android:text="拒绝理由"
             android:textColor="@color/text_label_color"
-            android:textSize="@dimen/h3"/>
+            android:textSize="@dimen/h3" />
 
         <TextView
             android:id="@+id/tv_refuse_reason"
@@ -180,7 +179,7 @@
             android:drawablePadding="5dp"
             android:paddingRight="20dp"
             android:textColor="@color/text_black"
-            android:textSize="@dimen/h3"/>
+            android:textSize="@dimen/h3" />
 
     </LinearLayout>
 

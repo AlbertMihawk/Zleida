@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.zleidadr.R;
 import com.zleidadr.common.Constant;

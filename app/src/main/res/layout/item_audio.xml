@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:singleLine="true"
             android:text="audio1"
             android:textColor="@color/text_black"
-            android:textSize="@dimen/h2"/>
+            android:textSize="@dimen/h2" />
 
         <TextView
             android:id="@+id/tv_audio_duration"
@@ -31,7 +31,7 @@
             android:gravity="right"
             android:textColor="@color/text_label_color"
             android:textSize="@dimen/h3"
-            android:visibility="invisible"/>
+            android:visibility="invisible" />
 
         <ImageView
             android:id="@+id/iv_play_status"
@@ -40,6 +40,6 @@
             android:layout_gravity="right"
             android:layout_weight="0.8"
             android:scaleType="fitCenter"
-            android:src="@drawable/icon_play"/>
+            android:src="@drawable/icon_play" />
     </LinearLayout>
 </LinearLayout>

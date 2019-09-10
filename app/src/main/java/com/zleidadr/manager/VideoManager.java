@@ -3,16 +3,12 @@ package com.zleidadr.manager;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Environment;
 import android.provider.MediaStore;
 
 import com.zleidadr.common.CommonUtils;
 import com.zleidadr.common.Logger;
 
 import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.LinkedList;
 
 /**
@@ -45,6 +41,16 @@ public class VideoManager {
         intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
         activity.startActivityForResult(intent, TAKE_VIDEO_RESULT);
         return file;
+    }
+
+    public static void takeVideo2(Activity activity) {
+        Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+        intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, VIDEO_QUALITY);
+        // 录制视频最大时长15s
+//        intent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 15);
+//        intent.putExtra(MediaStore.Images.Media.ORIENTATION, 90);
+
+        activity.startActivityForResult(intent, TAKE_VIDEO_RESULT);
     }
 
     public static LinkedList<File> getVideoFiles(Activity activity, String subDir) {

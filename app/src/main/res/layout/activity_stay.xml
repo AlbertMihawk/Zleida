@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
     <include
         android:id="@+id/title_bar"
-        layout="@layout/include_titlebar"/>
+        layout="@layout/include_titlebar" />
 
     <ListView
         android:id="@+id/lv_stay_list"
@@ -18,7 +18,7 @@
         android:dividerHeight="@dimen/listview_divider"
         android:drawSelectorOnTop="true"
         android:divider="@color/listview_bg"
-        android:listSelector="@drawable/selector_pressed_listview"/>
+        android:listSelector="@drawable/selector_pressed_listview" />
 
 
     <Button
@@ -30,5 +30,5 @@
         android:text="批量上传"
 
         android:textColor="@color/white"
-        android:textSize="@dimen/h1"/>
+        android:textSize="@dimen/h1" />
 </RelativeLayout>

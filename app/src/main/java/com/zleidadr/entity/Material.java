@@ -18,7 +18,7 @@ public class Material implements Parcelable {
     };
     private String mLogo;
     private String title;
-//    private String time;
+    //    private String time;
     private String filePath;
     private boolean isChecked;
     private long fileSize;

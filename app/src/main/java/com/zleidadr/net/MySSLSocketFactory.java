@@ -22,9 +22,7 @@ public class MySSLSocketFactory extends SSLSocketFactory {
 
     public MySSLSocketFactory(KeyStore truststore)
             throws NoSuchAlgorithmException, KeyManagementException,
-            KeyStoreException, UnrecoverableKeyException
-
-    {
+            KeyStoreException, UnrecoverableKeyException {
         super(truststore);
         TrustManager tm = new X509TrustManager() {
             @Override

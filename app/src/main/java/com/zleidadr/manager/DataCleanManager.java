@@ -29,7 +29,7 @@ public class DataCleanManager {
         if (dir != null && dir.isDirectory()) {
             String[] children = dir.list();
             for (int i = 0; i < children.length; i++) {
-               deleteDir(new File(dir, children[i]));
+                deleteDir(new File(dir, children[i]));
             }
         }
         dir.delete();
