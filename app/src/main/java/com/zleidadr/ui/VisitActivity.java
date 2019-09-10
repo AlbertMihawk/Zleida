@@ -110,7 +110,7 @@ public class VisitActivity extends Activity {
 
     private boolean checkAddress() {
         if (TextUtils.isEmpty(mReceivableReq.getAddress())) {
-            return false;
+            return true;
         }
         return true;
     }

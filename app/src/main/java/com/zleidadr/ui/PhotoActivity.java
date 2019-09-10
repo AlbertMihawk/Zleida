@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Point;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -289,6 +290,9 @@ public class PhotoActivity extends LocationBaseActivity {
                 if (TextUtils.isEmpty(resource.getLocation())) {
 //                    Toast.makeText(PhotoActivity.this, "定位信息获取失败", Toast.LENGTH_SHORT).show();
                 }
+//                Uri uri = data.getData();
+//                String path = uri.toString().split(":")[1];
+
                 resource.setResourceOriginal(Zleida.sCurrentPhotoFile.getName());
                 resource.setResourceType(Constant.RESOURCE_PHOTO);
                 resource.save();

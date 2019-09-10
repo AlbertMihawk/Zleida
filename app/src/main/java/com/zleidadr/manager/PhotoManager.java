@@ -15,10 +15,10 @@ import java.util.LinkedList;
  * Created by xiaoxuli on 16/1/12.
  */
 public class PhotoManager {
+    private static final String TAG = PhotoManager.class.getName();
     public static final int TAKE_PHOTO_RESULT = 100;
     public static final String PRENAME = "pic_";
     public static final String EXTNAME = ".jpg";
-    private static final String TAG = PhotoManager.class.getName();
     private static final int PHOTO_QUALITY = 0;//照片质量low:0 ~ high:1
 
     private PhotoManager() {
