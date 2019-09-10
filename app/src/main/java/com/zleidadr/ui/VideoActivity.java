@@ -178,7 +178,7 @@ public class VideoActivity extends LocationBaseActivity {
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
-                ViewHolder holder;
+                final ViewHolder holder;
                 if (convertView == null) {
                     convertView = getLayoutInflater().inflate(R.layout.item_video, null);
                     holder = new ViewHolder(convertView);
@@ -191,46 +191,22 @@ public class VideoActivity extends LocationBaseActivity {
                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(p.x / 3, p.x * 5 / 12);
                 holder.mIvVideo.setLayoutParams(params);
 
-                File file = mFiles.get(position);
-//                Uri uri = Uri.fromFile(file);
-//                Cursor cursor = VideoActivity.this.getContentResolver().query(uri, new String[]{
-//                        MediaStore.Video.Media.DATA, MediaStore.Video.Media._ID}, null, null, null);
-//                String[] proj = {MediaStore.Images.Media.DATA};
-//
-//                CursorLoader loader = new CursorLoader(VideoActivity.this, uri, proj, null, null, null);
-//
-//                cursor = loader.loadInBackground();
-//
-//                int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-//
-//                cursor.moveToFirst();
-//                String string = cursor.getString(column_index);
-//
-//                if (cursor != null && cursor.moveToNext()) {
-//                    int id = cursor.getInt(cursor.getColumnIndex(MediaStore.Video.VideoColumns._ID));
-//                    // 视频路径
-//                    String filePath = cursor.getString(cursor.getColumnIndex(MediaStore.Video.VideoColumns.DATA));
-//                    // ThumbnailUtils类2.2以上可用  Todo 获取视频缩略图
-//                    Bitmap bitmap = ThumbnailUtils.createVideoThumbnail(filePath, MediaStore.Images.Thumbnails.MICRO_KIND);
-                Bitmap videoThumbnail = ThumbnailUtils.createVideoThumbnail(file.getPath(), MediaStore.Video.Thumbnails.MINI_KIND);
-                holder.mIvVideo.setImageBitmap(videoThumbnail);
-//                    holder.mIvVideo.setImageBitmap(bitmap);
-//                }
+                final File file = mFiles.get(position);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        final Bitmap videoThumbnail = ThumbnailUtils.createVideoThumbnail(file.getPath(), MediaStore.Video.Thumbnails.MICRO_KIND);
+//                        final Bitmap b =  ThumbnailUtils.extractThumbnail(videoThumbnail, videoThumbnail.getWidth() / 2, videoThumbnail.getHeight() / 2);
+//                        final Bitmap b = Bitmap.createScaledBitmap(videoThumbnail, videoThumbnail.getWidth() / 20, videoThumbnail.getHeight() / 20, true);
+                        VideoActivity.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                holder.mIvVideo.setImageBitmap(videoThumbnail);
 
-//                //TODO 视频缩略图读取
-//                ImageLocalLoader.getInstance().setImage(holder.mIvVideo, p.x / 3, mFiles.get(position).getAbsolutePath(), new ImageLocalLoader.ImageLocalLoaderListener() {
-//                    @Override
-//                    public void onSetListener(final ImageView imageView, final Bitmap bitmap) {
-//                        VideoActivity.this.runOnUiThread(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                imageView.setImageBitmap(bitmap);
-//                            }
-//                        });
-//                    }
-//                });
-
-//
+                            }
+                        });
+                    }
+                }).start();
 //                holder.mTvVideo.setText(mFiles.get(position).getName());
 
                 if (mSelectIsValid) {
@@ -356,7 +332,7 @@ public class VideoActivity extends LocationBaseActivity {
 //                    resource.setResourceThumbnail(thumbnailPath);
 //                }
                 String path = uri.toString().split(":")[1];
-                resource.setResourceOriginal(path);
+                resource.setResourceOriginal(Zleida.sCurrentVideoFile.getName());
                 resource.setResourceType(Constant.RESOURCE_VIDEO);
                 resource.save();
                 list.add(resource);

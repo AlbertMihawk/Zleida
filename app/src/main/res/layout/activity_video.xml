@@ -17,6 +17,7 @@
         android:layout_below="@+id/title_bar"
         android:background="@color/listview_bg"
         android:horizontalSpacing="3dp"
+        tools:listitem="@layout/item_video"
         android:numColumns="3"
         android:verticalSpacing="1dp" />
 

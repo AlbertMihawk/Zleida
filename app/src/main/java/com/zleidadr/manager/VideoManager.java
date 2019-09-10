@@ -19,14 +19,15 @@ public class VideoManager {
     public static final int TAKE_VIDEO_RESULT = 200;
     public static final String PRENAME = "video_";
     public static final String EXTNAME = ".mp4";
-    private static final int VIDEO_QUALITY = 1;//照片质量low:0 ~ high:1
+    private static final int VIDEO_QUALITY_HIGH = 1;//照片质量low:0 ~ high:1
+    private static final int VIDEO_QUALITY_LOW = 0;//照片质量low:0 ~ high:1
 
     private VideoManager() {
     }
 
     public static File takeVideo(Activity activity, String subDir) {
         Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-        intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, VIDEO_QUALITY);
+//        intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, VIDEO_QUALITY_HIGH);
         // 录制视频最大时长15s
 //        intent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 15);
 //        intent.putExtra(MediaStore.Images.Media.ORIENTATION, 90);
@@ -45,7 +46,7 @@ public class VideoManager {
 
     public static void takeVideo2(Activity activity) {
         Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-        intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, VIDEO_QUALITY);
+        intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, VIDEO_QUALITY_LOW);
         // 录制视频最大时长15s
 //        intent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 15);
 //        intent.putExtra(MediaStore.Images.Media.ORIENTATION, 90);

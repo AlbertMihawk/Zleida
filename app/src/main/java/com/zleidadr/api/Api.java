@@ -60,7 +60,7 @@ import java.util.Map;
  */
 public class Api {
 
-    //    public static final String HOST = "http://zleida-app-qa-01.zleida.com/";
+//        public static final String HOST = "http://zleida-app-qa-01.zleida.com/";
     public static final String HOST = "https://app.zleida.com";
     private static final String TAG = Api.class.getName();
     private static final String CODE_SUCCESS = "1";

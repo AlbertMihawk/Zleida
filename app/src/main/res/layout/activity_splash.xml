@@ -30,7 +30,7 @@
             android:layout_toRightOf="@+id/logo"
             android:paddingLeft="5dp"
             android:paddingBottom="5dp"
-            android:text="v1.5"
+            android:text="v2.0"
             android:textColor="@color/white"
             android:textSize="@dimen/h6" />
     </RelativeLayout>
