@@ -31,8 +31,8 @@ public class Resource extends SugarRecord implements Serializable {
     private String resourceType; //10: 图片  20：录音 30:视频
     @Expose
     private String resourceOriginal;
-    @Expose
-    private String resourceThumbnail;
+//    @Expose
+//    private String resourceThumbnail;
 
 //    @Expose
 //    private ReceivableReq receivableReq;
@@ -149,11 +149,11 @@ public class Resource extends SugarRecord implements Serializable {
         this.resourceOriginal = resourceOriginal;
     }
 
-    public String getResourceThumbnail() {
-        return resourceThumbnail;
-    }
-
-    public void setResourceThumbnail(String resourceThumbnail) {
-        this.resourceThumbnail = resourceThumbnail;
-    }
+//    public String getResourceThumbnail() {
+//        return resourceThumbnail;
+//    }
+//
+//    public void setResourceThumbnail(String resourceThumbnail) {
+//        this.resourceThumbnail = resourceThumbnail;
+//    }
 }

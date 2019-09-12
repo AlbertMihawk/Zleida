@@ -323,7 +323,7 @@ public class VideoActivity extends LocationBaseActivity {
                 if (TextUtils.isEmpty(resource.getLocation())) {
 //                    Toast.makeText(PhotoActivity.this, "定位信息获取失败", Toast.LENGTH_SHORT).show();
                 }
-                Uri uri = data.getData();
+//                Uri uri = data.getData();
 //                Cursor cursor = this.getContentResolver().query(uri, null, null, null, null);
 //                if (cursor != null && cursor.moveToNext()) {
 ////                    int id = cursor.getInt(cursor.getColumnIndex(MediaStore.Video.VideoColumns._ID));
@@ -331,7 +331,7 @@ public class VideoActivity extends LocationBaseActivity {
 //                    String thumbnailPath = cursor.getString(cursor.getColumnIndex(MediaStore.Video.VideoColumns.DATA));
 //                    resource.setResourceThumbnail(thumbnailPath);
 //                }
-                String path = uri.toString().split(":")[1];
+//                String path = uri.toString().split(":")[1];
                 resource.setResourceOriginal(Zleida.sCurrentVideoFile.getName());
                 resource.setResourceType(Constant.RESOURCE_VIDEO);
                 resource.save();
